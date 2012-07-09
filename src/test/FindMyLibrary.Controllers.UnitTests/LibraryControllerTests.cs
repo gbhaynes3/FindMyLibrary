@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using FindMyLibrary.Tests.Fakes;
 using FindMyLibrary.Web.Controllers;
+using FindMyLibrary.Web.Helpers;
 using FindMyLibrary.Web.Models.Domain;
 using Moq;
 using NUnit.Framework;
@@ -55,6 +56,16 @@ namespace FindMyLibrary.Tests.Controllers.UnitTests
 
       //Assert
       Assert.IsInstanceOf<IList<Library>>(result.ViewData.Model);
+    }
+
+    [Test]
+    public void Index_Should_Return_PagedList()
+    {
+      var controller = CreateLibraryControllerAs("bob");
+
+      var result = (ViewResult) controller.Index(null, 0);
+
+      Assert.IsInstanceOf<PaginatedList<Library>>(result.ViewData.Model);
     }
   }
 }

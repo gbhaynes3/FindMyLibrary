@@ -17,7 +17,7 @@ namespace FindMyLibrary.Tests.Fakes
     }
     public IQueryable<Library> FindAllLibraries()
     {
-      throw new NotImplementedException();
+      return libraryList.AsQueryable();
     }
 
     public IQueryable<Library> FindByLocation(float latitude, float longitude)
@@ -27,7 +27,9 @@ namespace FindMyLibrary.Tests.Fakes
 
     public IQueryable<Library> FindLibrariesByText(string q)
     {
-      throw new NotImplementedException();
+      return libraryList.AsQueryable().Where(l => l.Name.Contains(q)
+                                                  || l.Address.Line1.Contains(q)
+                                                  || l.Address.City.Contains(q));
     }
 
     public Library GetLibrary(int id)
