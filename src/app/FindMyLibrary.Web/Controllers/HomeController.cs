@@ -6,15 +6,9 @@ namespace FindMyLibrary.Web.Controllers
 {
     public class HomeController : Controller
     {
-      private List<State> states;
-
-        public HomeController(List<State> states)
-        {
-          this.states = states;
-        }
         public ActionResult Index()
         {
-            return View(states);
+          return View();
         }
 
     }

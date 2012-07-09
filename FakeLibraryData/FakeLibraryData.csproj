@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}</ProjectGuid>
+    <ProjectGuid>{DECC7CC4-40CF-429C-810C-8B7720D8634E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FindMyLibrary.Controllers.UnitTests</RootNamespace>
-    <AssemblyName>FindMyLibrary.Controllers.UnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>FakeLibraryData</RootNamespace>
+    <AssemblyName>FakeLibraryData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,16 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,19 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeControllerTests.cs" />
-    <Compile Include="LibraryControllerTests.cs" />
+    <Compile Include="FakeLibraryRepository.cs" />
+    <Compile Include="FakeLibraryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\FakeLibraryData\FakeLibraryData.csproj">
-      <Project>{DECC7CC4-40CF-429C-810C-8B7720D8634E}</Project>
-      <Name>FakeLibraryData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj">
+    <ProjectReference Include="..\src\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj">
       <Project>{B1548118-1002-4AE0-B175-5986F60C92E8}</Project>
       <Name>FindMyLibrary.Web</Name>
     </ProjectReference>

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyLibrary.Controllers.U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyLibrary.Web", "src\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj", "{B1548118-1002-4AE0-B175-5986F60C92E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fakes", "Fakes", "{C4A8554E-33E7-4A44-86D0-5C0FDE0F5C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeLibraryData", "FakeLibraryData\FakeLibraryData.csproj", "{DECC7CC4-40CF-429C-810C-8B7720D8634E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +25,17 @@ Global
 		{B1548118-1002-4AE0-B175-5986F60C92E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1548118-1002-4AE0-B175-5986F60C92E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1548118-1002-4AE0-B175-5986F60C92E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECC7CC4-40CF-429C-810C-8B7720D8634E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECC7CC4-40CF-429C-810C-8B7720D8634E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECC7CC4-40CF-429C-810C-8B7720D8634E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECC7CC4-40CF-429C-810C-8B7720D8634E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167} = {22AA34F6-EEE8-4442-8698-06D2BBD111B8}
+		{C4A8554E-33E7-4A44-86D0-5C0FDE0F5C01} = {22AA34F6-EEE8-4442-8698-06D2BBD111B8}
+		{DECC7CC4-40CF-429C-810C-8B7720D8634E} = {C4A8554E-33E7-4A44-86D0-5C0FDE0F5C01}
 	EndGlobalSection
 EndGlobal
