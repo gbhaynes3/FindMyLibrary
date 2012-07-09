@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using FindMyLibrary.Domain;
 using FindMyLibrary.Web.Controllers;
+using FindMyLibrary.Web.Models.Domain;
 using NUnit.Framework;
 
 namespace FindMyLibrary.Controllers.UnitTests

@@ -51,10 +51,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\app\FindMyLibrary.Domain\FindMyLibrary.Domain.csproj">
-      <Project>{D17E39CA-DAF9-4295-BB21-C86D49EE7362}</Project>
-      <Name>FindMyLibrary.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj">
       <Project>{B1548118-1002-4AE0-B175-5986F60C92E8}</Project>
       <Name>FindMyLibrary.Web</Name>

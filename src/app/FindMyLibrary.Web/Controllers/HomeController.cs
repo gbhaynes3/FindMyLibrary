@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using FindMyLibrary.Domain;
+using FindMyLibrary.Web.Models.Domain;
 
 namespace FindMyLibrary.Web.Controllers
 {

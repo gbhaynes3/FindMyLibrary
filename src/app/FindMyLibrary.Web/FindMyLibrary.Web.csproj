@@ -113,6 +113,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Domain\Address.cs" />
+    <Compile Include="Models\Domain\Library.cs" />
+    <Compile Include="Models\Domain\Location.cs" />
+    <Compile Include="Models\Domain\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,19 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FindMyLibrary.Domain\FindMyLibrary.Domain.csproj">
-      <Project>{d17e39ca-daf9-4295-bb21-c86d49ee7362}</Project>
-      <Name>FindMyLibrary.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
