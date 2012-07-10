@@ -67,5 +67,17 @@ namespace FindMyLibrary.Tests.Controllers.UnitTests
 
       Assert.IsInstanceOf<PaginatedList<Library>>(result.ViewData.Model);
     }
+
+    [Test]
+    public void Index_Should_Return_PagedList_With_Total_of_101_And_Total_10_Pages()
+    {
+      var controller = CreateLibraryControllerAs("bob");
+
+      var result = (ViewResult) controller.Index(null, 0);
+      var list = result.ViewData.Model as PaginatedList<Library>;
+
+      Assert.AreEqual(101, list.TotalCount);
+      Assert.AreEqual(5, list.TotalPages);
+    }
   }
 }
