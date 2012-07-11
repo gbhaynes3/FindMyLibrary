@@ -33,5 +33,12 @@ namespace FindMyLibrary.Tests.Fakes
 
         return libraries;
       }
-    }
+
+      public static Library CreateLibrary()
+      {
+        Library library = new Library();
+        library.Name = "New Library Sample";
+        return library;
+      }
+  }
 }

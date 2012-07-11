@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using FindMyLibrary.Tests.Fakes;
 using FindMyLibrary.Web.Controllers;
@@ -78,6 +79,25 @@ namespace FindMyLibrary.Tests.Controllers.UnitTests
 
       Assert.AreEqual(101, list.TotalCount);
       Assert.AreEqual(5, list.TotalPages);
+    }
+
+    [Test]
+    public void Index_With_Library_Just_Return_Library_By_Id()
+    {
+      var testData = FakeLibraryData.CreateTestLibraries();
+      var library = FakeLibraryData.CreateLibrary();
+      library.Id = -1;
+      library.Name = "New City Main";
+      testData.Add(library);
+
+      var repository = new FakeLibraryRepository(testData);
+
+      var controller = new LibraryController(repository);
+
+      ViewResult result = (ViewResult) controller.Index(null, null);
+      PaginatedList<Library> list = result.ViewData.Model as PaginatedList<Library>;
+
+      Assert.AreEqual("New City Main", list.First().Name);
     }
   }
 }
