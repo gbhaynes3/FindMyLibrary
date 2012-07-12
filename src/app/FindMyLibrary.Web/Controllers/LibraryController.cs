@@ -29,7 +29,7 @@ namespace FindMyLibrary.Web.Controllers
           if (!string.IsNullOrEmpty(q))
             libraries = libraryRepository.FindLibrariesByText(q);
           else
-            libraries = libraryRepository.FindAllLibraries().OrderBy(l => l.Id);
+            libraries = libraryRepository.All.OrderBy(l => l.Id);
 
           var paginatedLibraries = new PaginatedList<Library>(libraries, page ?? 0, pageSize);
           

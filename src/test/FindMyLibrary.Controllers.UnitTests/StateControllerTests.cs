@@ -10,17 +10,18 @@ namespace FindMyLibrary.Controllers.UnitTests
   [TestFixture]
   public class StateControllerTests
   {
+    
+    [Test]
     public void GetStates_Should_Return_A_List_Of_States()
     {
+        var repository = new StateRepository();
+        repository.CreateStates();
+        var controller = new StateController(repository);
 
-      var repository = new StateRepository();
-      
-      var controller = new StateController(repository);
+        var result = (JsonResult) controller.GetStates();
+        var list = result.Data;
 
-      var result = (ViewResult) controller.GetStates();
-      List<State> list = result.ViewData.Model as List<State>;
-
-      Assert.AreEqual(50, list.Count);
+        Assert.IsNotNullOrEmpty(list.ToString());
     }
   }
 }

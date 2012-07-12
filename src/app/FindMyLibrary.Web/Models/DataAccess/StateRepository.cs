@@ -6,9 +6,12 @@ namespace FindMyLibrary.Web.Models.DataAccess
 {
   public class StateRepository
   {
-    private IList<State> states;
+    private List<State> states = new List<State>();
 
-
+    public void CreateStates()
+    {
+        states.Add(new State(){Id = "AL", Name = "Alabama"});
+    }
 
     public IQueryable<State> FindAllStates()
     {
