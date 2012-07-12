@@ -123,12 +123,14 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PaginatedList.cs" />
     <Compile Include="Models\DataAccess\ILibraryRepository.cs" />
     <Compile Include="Models\DataAccess\LibraryRepository.cs" />
+    <Compile Include="Models\DataAccess\StateRepository.cs" />
     <Compile Include="Models\Domain\Address.cs" />
     <Compile Include="Models\Domain\Library.cs" />
     <Compile Include="Models\Domain\Location.cs" />

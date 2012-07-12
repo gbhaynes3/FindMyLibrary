@@ -50,6 +50,7 @@
     <Compile Include="HomeControllerTests.cs" />
     <Compile Include="LibraryControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
