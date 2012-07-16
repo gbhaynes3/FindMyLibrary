@@ -26,6 +26,7 @@ namespace FindMyLibrary.Web.Controllers
         public StateController(StateRepository repository)
         {
             repo = repository;
+            repo.CreateStates();
         }
         
         public ActionResult GetStates()
