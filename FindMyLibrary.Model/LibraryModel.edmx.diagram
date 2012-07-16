@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f0f75b935d94cf4a7e164bf393eca43" Name="Diagram1" >
+        <EntityTypeShape EntityType="LibraryModel.Library" Width="1.5" PointX="1.75" PointY="1.25" />
+        <EntityTypeShape EntityType="LibraryModel.Address" Width="1.5" PointX="4.125" PointY="1.25" />
+        <EntityTypeShape EntityType="LibraryModel.City" Width="1.5" PointX="6.125" PointY="1.25" />
+        <EntityTypeShape EntityType="LibraryModel.State" Width="1.5" PointX="8.375" PointY="1.25" />
+        <AssociationConnector Association="LibraryModel.AddressLibrary" />
+        <AssociationConnector Association="LibraryModel.CityAddress" />
+        <AssociationConnector Association="LibraryModel.StateCity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using FakeStateData;
 using FindMyLibrary.Web.Controllers;
 using FindMyLibrary.Web.Models.DataAccess;
 using FindMyLibrary.Web.Models.Domain;
@@ -11,24 +12,37 @@ namespace FindMyLibrary.Controllers.UnitTests
     public class StateControllerTests
     {
         [Test]
-        public void GetStates_Should_Return_50_States()
+        public void GetStates_Should_Return_All_States()
         {
-            var repository = new StateRepository();
-            repository.CreateStates();
-            var controller = new StateController(repository);
+            //Arragne
+            List<State> states = new List<State>();
+            states.Add(new State { Abbreviation = "AL", Id = 1, Name = "Alabama"});
+            states.Add(new State { Abbreviation = "CA", Id = 2, Name = "California" });
+            states.Add(new State { Abbreviation = "NY", Id = 3, Name = "New York" });
 
-            var result = (JsonResult) controller.GetStates();
+            var repo = new FakeStateRepository(states);
 
-            var states = (List<JsonState>) result.Data;
-            Assert.AreEqual(50, states.Count);
+            var controller = new StateController(repo);
+
+            //Act
+            var result = controller.GetStates();
+
+            //Assert
+            
         }
 
         [Test]
         public void GetStates_Should_Return_Json()
         {
-            var repository = new StateRepository();
-            repository.CreateStates();
-            var controller = new StateController(repository);
+            //Arragne
+            List<State> states = new List<State>();
+            states.Add(new State { Abbreviation = "AL", Id = 1, Name = "Alabama" });
+            states.Add(new State { Abbreviation = "CA", Id = 2, Name = "California" });
+            states.Add(new State { Abbreviation = "NY", Id = 3, Name = "New York" });
+
+            var repo = new FakeStateRepository(states);
+
+            var controller = new StateController(repo);
 
             ActionResult result = controller.GetStates();
 
@@ -38,9 +52,14 @@ namespace FindMyLibrary.Controllers.UnitTests
         [Test]
         public void GetStates_Should_Return_JsonStates()
         {
-            var repository = new StateRepository();
-            repository.CreateStates();
-            var controller = new StateController(repository);
+            List<State> states = new List<State>();
+            states.Add(new State { Abbreviation = "AL", Id = 1, Name = "Alabama" });
+            states.Add(new State { Abbreviation = "CA", Id = 2, Name = "California" });
+            states.Add(new State { Abbreviation = "NY", Id = 3, Name = "New York" });
+
+            var repo = new FakeStateRepository(states);
+
+            var controller = new StateController(repo);
 
             var result = (JsonResult) controller.GetStates();
 

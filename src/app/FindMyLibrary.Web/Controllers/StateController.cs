@@ -9,7 +9,7 @@ namespace FindMyLibrary.Web.Controllers
 {
     public class JsonState
     {
-        public string StateId { get; set; }
+        public int StateId { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
     }
@@ -17,21 +17,21 @@ namespace FindMyLibrary.Web.Controllers
     public class StateController : Controller
     {
 
-        private StateRepository repo;
+        private IRepository<State> repo;
 
         public StateController() : this(new StateRepository())
         {
         }
 
-        public StateController(StateRepository repository)
+        public StateController(IRepository<State> repository)
         {
             repo = repository;
-            repo.CreateStates();
+            
         }
         
         public ActionResult GetStates()
         {
-            var states = repo.FindAllStates();
+            var states = repo.All;
 
             var jsonStates = from state in states.AsEnumerable()
                              select JsonStateFromState(state);
@@ -45,7 +45,7 @@ namespace FindMyLibrary.Web.Controllers
                 {
                     StateId = state.Id,
                     Name = state.Name,
-                    Url = state.Id
+                    Url = state.Abbreviation
                 };
         }
 

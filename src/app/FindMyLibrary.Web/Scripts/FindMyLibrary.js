@@ -10,7 +10,11 @@ FindMyLibrary._renderStates = function(states) {
 
     $.each(states, function(i, state) {
         $('#stateList').append($('<li/>')
-            .attr("class", "stateItem")
+            .append(_getStateLinkHTML(state))
         );
     });
 };
+
+function _getStateLinkHTML(state) {
+    return '<a href="' + state.Url + '">' + state.Name + '</a>';
+}

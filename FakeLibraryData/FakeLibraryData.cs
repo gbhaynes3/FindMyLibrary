@@ -22,7 +22,8 @@ namespace FindMyLibrary.Tests.Fakes
                                                     Line1 = "123 Main Street",
                                                     State = new State()
                                                               {
-                                                                Id = "AL",
+                                                                Id = 1,
+                                                                Abbreviation = "AL",
                                                                 Name = "Alabama"
                                                               },
                                                     Zip = "55555"

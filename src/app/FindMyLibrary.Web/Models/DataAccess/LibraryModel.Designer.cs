@@ -1,2 +1,0 @@
-﻿// Seeing this comment implies that the code generation for file 'C:\Projects\GitHub\FindMyLibrary\src\app\FindMyLibrary.Web\Models\DataAccess\LibraryModel.edmx'
-// failed. See the ErrorList for details.

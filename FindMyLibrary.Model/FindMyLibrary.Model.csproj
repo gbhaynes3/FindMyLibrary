@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}</ProjectGuid>
+    <ProjectGuid>{590468BB-1BF4-4E39-8A7C-A0DF607E476C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FindMyLibrary.Controllers.UnitTests</RootNamespace>
-    <AssemblyName>FindMyLibrary.Controllers.UnitTests</AssemblyName>
+    <RootNamespace>FindMyLibrary.Model</RootNamespace>
+    <AssemblyName>FindMyLibrary.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,16 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,27 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeControllerTests.cs" />
-    <Compile Include="LibraryControllerTests.cs" />
+    <Compile Include="LibraryEntitiesContext.cs" />
+    <Compile Include="LibraryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StateControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <EntityDeploy Include="LibraryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LibraryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FakeLibraryData\FakeLibraryData.csproj">
-      <Project>{DECC7CC4-40CF-429C-810C-8B7720D8634E}</Project>
-      <Name>FakeLibraryData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\FakeStateData\FakeStateData.csproj">
-      <Project>{726290FD-DEFE-4E08-85A1-F50E511B0F9B}</Project>
-      <Name>FakeStateData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj">
-      <Project>{B1548118-1002-4AE0-B175-5986F60C92E8}</Project>
-      <Name>FindMyLibrary.Web</Name>
-    </ProjectReference>
+    <None Include="App.Config" />
+    <None Include="LibraryModel.edmx.diagram">
+      <DependentUpon>LibraryModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
