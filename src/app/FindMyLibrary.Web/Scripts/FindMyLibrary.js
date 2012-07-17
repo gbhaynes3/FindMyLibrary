@@ -6,19 +6,23 @@ FindMyLibrary._callbackStateList = function() {
 };
 
 FindMyLibrary._renderStates = function(states) {
-    $("#stateList").empty();
+   $("#stateList").empty();
 
+
+    $('#stateList').append('<div class="row">');
     $.each(states, function(i, state) {
         $('#stateList').append(_getStateLinkHTML(state));
     });
+    $('#stateList').append('</div>');
+    
 };
 
 function _getStateLinkHTML(state) {
     var str = '';
-    if (state.StateId % 4 == 0)
-        str = '<div class="row"><div class="span4"/><div class="span8>';
-    str = str + '<a href="/City/' + state.Url + '">' + state.Name + '</a></td>';
-    if (state.StateId % 8 == 0)
-        str = str + '</div></div>';
+    var startString = '<div class="row">';
+
+    str = str + '<div class="span3"><a href="' + state.Url + '">' + state.Name + '</a></div>';
+    if (state.StateId % 3 == 0)
+        str = str + '</div>' + startString;
     return str;
 }
