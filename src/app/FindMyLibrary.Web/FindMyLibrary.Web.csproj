@@ -124,6 +124,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\StateController.cs" />
@@ -131,6 +132,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PaginatedList.cs" />
+    <Compile Include="Models\DataAccess\CityRepository.cs" />
     <Compile Include="Models\DataAccess\ILibraryRepository.cs" />
     <Compile Include="Models\DataAccess\IRepository.cs" />
     <Compile Include="Models\DataAccess\LibraryContext.cs" />

@@ -45,7 +45,7 @@ namespace FindMyLibrary.Web.Controllers
                 {
                     StateId = state.Id,
                     Name = state.Name,
-                    Url = state.Abbreviation
+                    Url = "/City/" + state.Id.ToString()
                 };
         }
 

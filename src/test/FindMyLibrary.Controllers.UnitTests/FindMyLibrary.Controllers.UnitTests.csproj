@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CityControllerTests.cs" />
     <Compile Include="HomeControllerTests.cs" />
     <Compile Include="LibraryControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
