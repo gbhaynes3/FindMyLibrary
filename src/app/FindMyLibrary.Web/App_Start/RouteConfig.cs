@@ -19,12 +19,17 @@ namespace FindMyLibrary.Web
           routeTemplate: "api/{controller}/{id}",
           defaults: new { id = RouteParameter.Optional }
       );
-
+     routes.MapRoute(
+            "City",
+            "City/{stateId}",
+            new {controller ="City", action= "GetCitiesByState", stateId = ""});
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}/{id}",
           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
+
+   
     }
   }
 }

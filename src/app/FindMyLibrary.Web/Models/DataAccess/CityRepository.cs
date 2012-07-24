@@ -5,6 +5,9 @@ namespace FindMyLibrary.Web.Models.DataAccess
 {
     public class CityRepository: IRepository<City>
     {
+        
+        LibraryContext context = new LibraryContext();
+
         public IQueryable<City> All { get; private set; }
         public City Find(int id)
         {
