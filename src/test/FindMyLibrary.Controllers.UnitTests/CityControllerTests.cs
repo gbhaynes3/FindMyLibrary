@@ -15,14 +15,14 @@ namespace FindMyLibrary.Controllers.UnitTests
         {
             //Arrange
             List<City> cities = new List<City>();
-            cities.Add(new City {CityId = 1, Name = "New York", StateId = 1});
+            cities.Add(new City {CityId = 1, Name = "New York", StateAbbreviation = "NY"});
 
             var repo = new FakeCityRepository(cities);
 
             var controller = new CityController(repo);
 
             //Act
-            var result = controller.GetCitiesByState(1);
+            var result = controller.GetCitiesByState("NY");
 
             //Assert
             Assert.IsInstanceOf<JsonResult>(result);

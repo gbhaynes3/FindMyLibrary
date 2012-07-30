@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AttributeRouting.Web.Mvc;
 using FindMyLibrary.Web.Models.DataAccess;
 using FindMyLibrary.Web.Models.Domain;
 
@@ -34,9 +35,10 @@ namespace FindMyLibrary.Web.Controllers
             return View();
         }
 
-        public ActionResult GetCitiesByState(int stateId)
+      
+        public ActionResult GetCitiesByState(string stateAbbreviaiton)
         {
-            var cities = repository.All.Where(x => x.StateId.Equals(stateId));
+          var cities = repository.All.Where(x => x.StateAbbreviation.Equals(stateAbbreviaiton));
 
             var jsonCities = from city in cities.AsEnumerable()
                              select JsonCityFromCity(city);
@@ -48,7 +50,7 @@ namespace FindMyLibrary.Web.Controllers
         {
             return new JsonCity
                 {
-                    CityId = city.StateId,
+                    CityId = city.CityId,
                     Name = city.Name,
                     Url = city.Name
                 };
