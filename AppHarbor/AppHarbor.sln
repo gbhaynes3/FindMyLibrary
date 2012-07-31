@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyLibrary.Web", "..\src\app\FindMyLibrary.Web\FindMyLibrary.Web.csproj", "{B1548118-1002-4AE0-B175-5986F60C92E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyLibrary.Controllers.UnitTests", "..\src\test\FindMyLibrary.Controllers.UnitTests\FindMyLibrary.Controllers.UnitTests.csproj", "{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAAAFBF-8BA9-4233-BDB3-88AEAAA96167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1548118-1002-4AE0-B175-5986F60C92E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1548118-1002-4AE0-B175-5986F60C92E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1548118-1002-4AE0-B175-5986F60C92E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1548118-1002-4AE0-B175-5986F60C92E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
