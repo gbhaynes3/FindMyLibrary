@@ -9,6 +9,6 @@
   @foreach(var city in Model.OrderBy(a => a.Name).Distinct())
   {
       
-      <div class="span3">@city.Name</div>
+      <div class="span3">@Html.ActionLink(city.Name, "GetLibrariesByCity", "Library")</div>
   }
 </div>

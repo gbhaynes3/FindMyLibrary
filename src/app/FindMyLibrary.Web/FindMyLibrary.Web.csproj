@@ -55,9 +55,6 @@
       <HintPath>..\..\..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="RouteDebugger">
-      <HintPath>..\..\..\packages\routedebugger.2.1.4.0\lib\net40\RouteDebugger.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
