@@ -43,12 +43,12 @@ namespace FindMyLibrary.Web.Controllers
 
         private JsonState JsonStateFromState(State state)
         {
-            return new JsonState
-                {
-                    StateId = state.Id,
-                    Name = state.Name,
-                    Url = "/City/" + state.Id.ToString()
-                };
+          return new JsonState
+                   {
+                     StateId = state.Id,
+                     Name = state.Name,
+                     Url = "/" + state.Abbreviation + "/cities"
+                   };
         }
 
     }

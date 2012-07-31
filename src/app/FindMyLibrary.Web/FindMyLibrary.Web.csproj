@@ -55,6 +55,9 @@
       <HintPath>..\..\..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RouteDebugger">
+      <HintPath>..\..\..\packages\routedebugger.2.1.4.0\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
@@ -145,7 +148,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PaginatedList.cs" />
-    <Compile Include="Models\DataAccess\CityRepository.cs" />
+    <Compile Include="Models\DataAccess\AddressRepository.cs" />
     <Compile Include="Models\DataAccess\ILibraryRepository.cs" />
     <Compile Include="Models\DataAccess\IRepository.cs" />
     <Compile Include="Models\DataAccess\LibraryContext.cs" />
@@ -188,6 +191,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\City\GetCitiesByState.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

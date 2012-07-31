@@ -15,11 +15,12 @@ namespace FindMyLibrary.Web
           routeTemplate: "api/{controller}/{id}",
           defaults: new { id = RouteParameter.Optional }
       );
-     routes.MapRoute(
-            "StateCities",
-            "{stateAbbreviation}",
-            new {controller ="City", action= "GetCitiesByState", stateAbbreviation = ""});
+     
 
+      routes.MapRoute(
+        name: "city",
+        url: "{stateAbbreviaiton}/cities",
+        defaults: new { controller = "City", action = "GetCitiesByState", stateAbbreviaiton = "AL" });
     
       routes.MapRoute(
           name: "Default",
@@ -27,7 +28,8 @@ namespace FindMyLibrary.Web
           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
 
-   
+      
+
     }
   }
 }

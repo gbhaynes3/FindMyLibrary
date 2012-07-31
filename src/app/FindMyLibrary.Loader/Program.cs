@@ -1,4 +1,8 @@
-﻿namespace FindMyLibrary.Loader
+﻿using System;
+using System.Linq;
+using LinqToExcel;
+
+namespace FindMyLibrary.Loader
 {
   class Program
   {

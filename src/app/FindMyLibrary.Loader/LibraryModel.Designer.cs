@@ -17,6 +17,13 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("FindMyLibraryModel", "FK_Addresses_States_State_Id", "States", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(FindMyLibrary.Loader.State), "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(FindMyLibrary.Loader.Address), true)]
+[assembly: EdmRelationshipAttribute("FindMyLibraryModel", "FK_Libraries_Addresses_Address_AddressId", "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(FindMyLibrary.Loader.Address), "Libraries", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(FindMyLibrary.Loader.Library), true)]
+
+#endregion
+
 namespace FindMyLibrary.Loader
 {
     #region Contexts
@@ -68,6 +75,38 @@ namespace FindMyLibrary.Loader
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<C__MigrationHistory> C__MigrationHistory
+        {
+            get
+            {
+                if ((_C__MigrationHistory == null))
+                {
+                    _C__MigrationHistory = base.CreateObjectSet<C__MigrationHistory>("C__MigrationHistory");
+                }
+                return _C__MigrationHistory;
+            }
+        }
+        private ObjectSet<C__MigrationHistory> _C__MigrationHistory;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Address> Addresses
+        {
+            get
+            {
+                if ((_Addresses == null))
+                {
+                    _Addresses = base.CreateObjectSet<Address>("Addresses");
+                }
+                return _Addresses;
+            }
+        }
+        private ObjectSet<Address> _Addresses;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Library> Libraries
         {
             get
@@ -102,6 +141,22 @@ namespace FindMyLibrary.Loader
         #region AddTo Methods
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the C__MigrationHistory EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToC__MigrationHistory(C__MigrationHistory c__MigrationHistory)
+        {
+            base.AddObject("C__MigrationHistory", c__MigrationHistory);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Addresses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAddresses(Address address)
+        {
+            base.AddObject("Addresses", address);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Libraries EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToLibraries(Library library)
@@ -128,22 +183,22 @@ namespace FindMyLibrary.Loader
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="FindMyLibraryModel", Name="Library")]
+    [EdmEntityTypeAttribute(NamespaceName="FindMyLibraryModel", Name="Address")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Library : EntityObject
+    public partial class Address : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Library object.
+        /// Create a new Address object.
         /// </summary>
-        /// <param name="libraryId">Initial value of the LibraryId property.</param>
-        public static Library CreateLibrary(global::System.Int32 libraryId)
+        /// <param name="addressId">Initial value of the AddressId property.</param>
+        public static Address CreateAddress(global::System.Int32 addressId)
         {
-            Library library = new Library();
-            library.LibraryId = libraryId;
-            return library;
+            Address address = new Address();
+            address.AddressId = addressId;
+            return address;
         }
 
         #endregion
@@ -155,75 +210,75 @@ namespace FindMyLibrary.Loader
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 LibraryId
+        public global::System.Int32 AddressId
         {
             get
             {
-                return _LibraryId;
+                return _AddressId;
             }
             set
             {
-                if (_LibraryId != value)
+                if (_AddressId != value)
                 {
-                    OnLibraryIdChanging(value);
-                    ReportPropertyChanging("LibraryId");
-                    _LibraryId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("LibraryId");
-                    OnLibraryIdChanged();
+                    OnAddressIdChanging(value);
+                    ReportPropertyChanging("AddressId");
+                    _AddressId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AddressId");
+                    OnAddressIdChanged();
                 }
             }
         }
-        private global::System.Int32 _LibraryId;
-        partial void OnLibraryIdChanging(global::System.Int32 value);
-        partial void OnLibraryIdChanged();
+        private global::System.Int32 _AddressId;
+        partial void OnAddressIdChanging(global::System.Int32 value);
+        partial void OnAddressIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String LibraryName
+        public global::System.String Line1
         {
             get
             {
-                return _LibraryName;
+                return _Line1;
             }
             set
             {
-                OnLibraryNameChanging(value);
-                ReportPropertyChanging("LibraryName");
-                _LibraryName = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("LibraryName");
-                OnLibraryNameChanged();
+                OnLine1Changing(value);
+                ReportPropertyChanging("Line1");
+                _Line1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Line1");
+                OnLine1Changed();
             }
         }
-        private global::System.String _LibraryName;
-        partial void OnLibraryNameChanging(global::System.String value);
-        partial void OnLibraryNameChanged();
+        private global::System.String _Line1;
+        partial void OnLine1Changing(global::System.String value);
+        partial void OnLine1Changed();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Address
+        public global::System.String Line2
         {
             get
             {
-                return _Address;
+                return _Line2;
             }
             set
             {
-                OnAddressChanging(value);
-                ReportPropertyChanging("Address");
-                _Address = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Address");
-                OnAddressChanged();
+                OnLine2Changing(value);
+                ReportPropertyChanging("Line2");
+                _Line2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Line2");
+                OnLine2Changed();
             }
         }
-        private global::System.String _Address;
-        partial void OnAddressChanging(global::System.String value);
-        partial void OnAddressChanged();
+        private global::System.String _Line2;
+        partial void OnLine2Changing(global::System.String value);
+        partial void OnLine2Changed();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -254,30 +309,6 @@ namespace FindMyLibrary.Loader
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String State
-        {
-            get
-            {
-                return _State;
-            }
-            set
-            {
-                OnStateChanging(value);
-                ReportPropertyChanging("State");
-                _State = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("State");
-                OnStateChanged();
-            }
-        }
-        private global::System.String _State;
-        partial void OnStateChanging(global::System.String value);
-        partial void OnStateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public global::System.String Zip
         {
             get
@@ -296,6 +327,314 @@ namespace FindMyLibrary.Loader
         private global::System.String _Zip;
         partial void OnZipChanging(global::System.String value);
         partial void OnZipChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> State_Id
+        {
+            get
+            {
+                return _State_Id;
+            }
+            set
+            {
+                OnState_IdChanging(value);
+                ReportPropertyChanging("State_Id");
+                _State_Id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("State_Id");
+                OnState_IdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _State_Id;
+        partial void OnState_IdChanging(Nullable<global::System.Int32> value);
+        partial void OnState_IdChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("FindMyLibraryModel", "FK_Addresses_States_State_Id", "States")]
+        public State State
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<State>("FindMyLibraryModel.FK_Addresses_States_State_Id", "States").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<State>("FindMyLibraryModel.FK_Addresses_States_State_Id", "States").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<State> StateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<State>("FindMyLibraryModel.FK_Addresses_States_State_Id", "States");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<State>("FindMyLibraryModel.FK_Addresses_States_State_Id", "States", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("FindMyLibraryModel", "FK_Libraries_Addresses_Address_AddressId", "Libraries")]
+        public EntityCollection<Library> Libraries
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Library>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Libraries");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Library>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Libraries", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="FindMyLibraryModel", Name="C__MigrationHistory")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class C__MigrationHistory : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new C__MigrationHistory object.
+        /// </summary>
+        /// <param name="migrationId">Initial value of the MigrationId property.</param>
+        /// <param name="createdOn">Initial value of the CreatedOn property.</param>
+        /// <param name="model">Initial value of the Model property.</param>
+        /// <param name="productVersion">Initial value of the ProductVersion property.</param>
+        public static C__MigrationHistory CreateC__MigrationHistory(global::System.String migrationId, global::System.DateTime createdOn, global::System.Byte[] model, global::System.String productVersion)
+        {
+            C__MigrationHistory c__MigrationHistory = new C__MigrationHistory();
+            c__MigrationHistory.MigrationId = migrationId;
+            c__MigrationHistory.CreatedOn = createdOn;
+            c__MigrationHistory.Model = model;
+            c__MigrationHistory.ProductVersion = productVersion;
+            return c__MigrationHistory;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String MigrationId
+        {
+            get
+            {
+                return _MigrationId;
+            }
+            set
+            {
+                if (_MigrationId != value)
+                {
+                    OnMigrationIdChanging(value);
+                    ReportPropertyChanging("MigrationId");
+                    _MigrationId = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("MigrationId");
+                    OnMigrationIdChanged();
+                }
+            }
+        }
+        private global::System.String _MigrationId;
+        partial void OnMigrationIdChanging(global::System.String value);
+        partial void OnMigrationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CreatedOn
+        {
+            get
+            {
+                return _CreatedOn;
+            }
+            set
+            {
+                OnCreatedOnChanging(value);
+                ReportPropertyChanging("CreatedOn");
+                _CreatedOn = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreatedOn");
+                OnCreatedOnChanged();
+            }
+        }
+        private global::System.DateTime _CreatedOn;
+        partial void OnCreatedOnChanging(global::System.DateTime value);
+        partial void OnCreatedOnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Model
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Model);
+            }
+            set
+            {
+                OnModelChanging(value);
+                ReportPropertyChanging("Model");
+                _Model = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Model");
+                OnModelChanged();
+            }
+        }
+        private global::System.Byte[] _Model;
+        partial void OnModelChanging(global::System.Byte[] value);
+        partial void OnModelChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ProductVersion
+        {
+            get
+            {
+                return _ProductVersion;
+            }
+            set
+            {
+                OnProductVersionChanging(value);
+                ReportPropertyChanging("ProductVersion");
+                _ProductVersion = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ProductVersion");
+                OnProductVersionChanged();
+            }
+        }
+        private global::System.String _ProductVersion;
+        partial void OnProductVersionChanging(global::System.String value);
+        partial void OnProductVersionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="FindMyLibraryModel", Name="Library")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Library : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Library object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="latitue">Initial value of the Latitue property.</param>
+        /// <param name="longitude">Initial value of the Longitude property.</param>
+        public static Library CreateLibrary(global::System.Int32 id, global::System.Double latitue, global::System.Double longitude)
+        {
+            Library library = new Library();
+            library.Id = id;
+            library.Latitue = latitue;
+            library.Longitude = longitude;
+            return library;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -324,33 +663,33 @@ namespace FindMyLibrary.Loader
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> Latitude
+        public global::System.Double Latitue
         {
             get
             {
-                return _Latitude;
+                return _Latitue;
             }
             set
             {
-                OnLatitudeChanging(value);
-                ReportPropertyChanging("Latitude");
-                _Latitude = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Latitude");
-                OnLatitudeChanged();
+                OnLatitueChanging(value);
+                ReportPropertyChanging("Latitue");
+                _Latitue = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Latitue");
+                OnLatitueChanged();
             }
         }
-        private Nullable<global::System.Double> _Latitude;
-        partial void OnLatitudeChanging(Nullable<global::System.Double> value);
-        partial void OnLatitudeChanged();
+        private global::System.Double _Latitue;
+        partial void OnLatitueChanging(global::System.Double value);
+        partial void OnLatitueChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> Longitude
+        public global::System.Double Longitude
         {
             get
             {
@@ -365,13 +704,79 @@ namespace FindMyLibrary.Loader
                 OnLongitudeChanged();
             }
         }
-        private Nullable<global::System.Double> _Longitude;
-        partial void OnLongitudeChanging(Nullable<global::System.Double> value);
+        private global::System.Double _Longitude;
+        partial void OnLongitudeChanging(global::System.Double value);
         partial void OnLongitudeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Address_AddressId
+        {
+            get
+            {
+                return _Address_AddressId;
+            }
+            set
+            {
+                OnAddress_AddressIdChanging(value);
+                ReportPropertyChanging("Address_AddressId");
+                _Address_AddressId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Address_AddressId");
+                OnAddress_AddressIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Address_AddressId;
+        partial void OnAddress_AddressIdChanging(Nullable<global::System.Int32> value);
+        partial void OnAddress_AddressIdChanged();
 
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("FindMyLibraryModel", "FK_Libraries_Addresses_Address_AddressId", "Addresses")]
+        public Address Address
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Addresses").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Addresses").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Address> AddressReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Address>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Addresses");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Address>("FindMyLibraryModel.FK_Libraries_Addresses_Address_AddressId", "Addresses", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -387,11 +792,11 @@ namespace FindMyLibrary.Loader
         /// <summary>
         /// Create a new State object.
         /// </summary>
-        /// <param name="stateId">Initial value of the StateId property.</param>
-        public static State CreateState(global::System.String stateId)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static State CreateState(global::System.Int32 id)
         {
             State state = new State();
-            state.StateId = stateId;
+            state.Id = id;
             return state;
         }
 
@@ -404,55 +809,105 @@ namespace FindMyLibrary.Loader
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String StateId
+        public global::System.Int32 Id
         {
             get
             {
-                return _StateId;
+                return _Id;
             }
             set
             {
-                if (_StateId != value)
+                if (_Id != value)
                 {
-                    OnStateIdChanging(value);
-                    ReportPropertyChanging("StateId");
-                    _StateId = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("StateId");
-                    OnStateIdChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.String _StateId;
-        partial void OnStateIdChanging(global::System.String value);
-        partial void OnStateIdChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String StateName
+        public global::System.String Abbreviation
         {
             get
             {
-                return _StateName;
+                return _Abbreviation;
             }
             set
             {
-                OnStateNameChanging(value);
-                ReportPropertyChanging("StateName");
-                _StateName = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("StateName");
-                OnStateNameChanged();
+                OnAbbreviationChanging(value);
+                ReportPropertyChanging("Abbreviation");
+                _Abbreviation = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Abbreviation");
+                OnAbbreviationChanged();
             }
         }
-        private global::System.String _StateName;
-        partial void OnStateNameChanging(global::System.String value);
-        partial void OnStateNameChanged();
+        private global::System.String _Abbreviation;
+        partial void OnAbbreviationChanging(global::System.String value);
+        partial void OnAbbreviationChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
 
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("FindMyLibraryModel", "FK_Addresses_States_State_Id", "Addresses")]
+        public EntityCollection<Address> Addresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Address>("FindMyLibraryModel.FK_Addresses_States_State_Id", "Addresses");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Address>("FindMyLibraryModel.FK_Addresses_States_State_Id", "Addresses", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
 
     #endregion

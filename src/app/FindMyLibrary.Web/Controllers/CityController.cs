@@ -19,31 +19,33 @@ namespace FindMyLibrary.Web.Controllers
     public class CityController : Controller
     {
 
-        private IRepository<City> repository;
+        private IRepository<Address> repository;
 
-        public CityController() :this(new CityRepository())
+        public CityController() :this(new AddressRepository())
         {
         }
 
-        public CityController(IRepository<City> repository )
+        public CityController(IRepository<Address> repository )
         {
             this.repository = repository;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string stateAbbreviation)
         {
-            return View();
+          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviation)).Select(a => new City{CityId = 1, Name = a.City});
+
+          var jsonCities = from city in cities.AsEnumerable()
+                           select JsonCityFromCity(city);
+
+          return Json(jsonCities.ToList());
         }
 
       
         public ActionResult GetCitiesByState(string stateAbbreviaiton)
         {
-          var cities = repository.All.Where(x => x.StateAbbreviation.Equals(stateAbbreviaiton));
+          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviaiton)).Select(a => new City { CityId = 1, Name = a.City });
 
-            var jsonCities = from city in cities.AsEnumerable()
-                             select JsonCityFromCity(city);
-
-            return Json(jsonCities.ToList());
+          return View(cities);
         }
 
         private JsonCity JsonCityFromCity(City city)
