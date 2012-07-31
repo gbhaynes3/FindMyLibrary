@@ -1,0 +1,14 @@
+﻿@model System.Linq.IQueryable<FindMyLibrary.Web.Models.Domain.City>
+
+@{
+  
+}
+
+<h2>Pick a City</h2>
+<div id="cityList" class="row-fluid">
+  @foreach(var city in Model.OrderBy(a => a.Name).Distinct())
+  {
+      
+      <div class="span3">@city.Name</div>
+  }
+</div>

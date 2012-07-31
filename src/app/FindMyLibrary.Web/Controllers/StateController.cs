@@ -2,6 +2,7 @@
 using System.Activities.Statements;
 using System.Linq;
 using System.Web.Mvc;
+using AttributeRouting.Web.Mvc;
 using FindMyLibrary.Web.Models.DataAccess;
 using FindMyLibrary.Web.Models.Domain;
 
@@ -29,6 +30,7 @@ namespace FindMyLibrary.Web.Controllers
             
         }
         
+        
         public ActionResult GetStates()
         {
             var states = repo.All;
@@ -41,12 +43,12 @@ namespace FindMyLibrary.Web.Controllers
 
         private JsonState JsonStateFromState(State state)
         {
-            return new JsonState
-                {
-                    StateId = state.Id,
-                    Name = state.Name,
-                    Url = "/City/" + state.Id.ToString()
-                };
+          return new JsonState
+                   {
+                     StateId = state.Id,
+                     Name = state.Name,
+                     Url = "/" + state.Abbreviation + "/cities"
+                   };
         }
 
     }

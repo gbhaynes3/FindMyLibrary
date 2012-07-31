@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -19,17 +15,21 @@ namespace FindMyLibrary.Web
           routeTemplate: "api/{controller}/{id}",
           defaults: new { id = RouteParameter.Optional }
       );
-     routes.MapRoute(
-            "City",
-            "City/{stateId}",
-            new {controller ="City", action= "GetCitiesByState", stateId = ""});
+     
+
+      routes.MapRoute(
+        name: "city",
+        url: "{stateAbbreviaiton}/cities",
+        defaults: new { controller = "City", action = "GetCitiesByState", stateAbbreviaiton = "AL" });
+    
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}/{id}",
           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
 
-   
+      
+
     }
   }
 }

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FindMyLibrary.Model")]
+[assembly: AssemblyTitle("FindMyLibrary.Loader")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EBSCO Industries, Inc.")]
-[assembly: AssemblyProduct("FindMyLibrary.Model")]
-[assembly: AssemblyCopyright("Copyright © EBSCO Industries, Inc. 2012")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("FindMyLibrary.Loader")]
+[assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7de2c7be-e0c0-4e5e-a53b-aa3eab233945")]
+[assembly: Guid("4d820c90-56f2-4d06-82ec-96ee61676709")]
 
 // Version information for an assembly consists of the following four values:
 //

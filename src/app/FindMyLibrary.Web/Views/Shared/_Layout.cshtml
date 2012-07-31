@@ -9,7 +9,7 @@
         <meta name="description" content="Find your local public library"/>
         <meta name="keywords" content="Library, Public Library, Public, My Library"/>
       
-        @Styles.Render("~/Content/bootstrap.css")
+        @Styles.Render("~/Content/bootstrap.css", "~/Content/Site.css")
         @Styles.Render("~/Content/bootstrap-responsive.min.css")
         @*@Styles.Render("~/Content/themes/base/css", "~/Content/Site.css", "~/Content/bootstrap.css")*@
         @Scripts.Render("http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.2.min.js")
@@ -27,7 +27,7 @@
                     <a class="brand" href="#">Find My Library</a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="/">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
