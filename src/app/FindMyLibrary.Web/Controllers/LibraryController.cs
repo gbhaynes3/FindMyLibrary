@@ -36,9 +36,9 @@ namespace FindMyLibrary.Web.Controllers
           return View(paginatedLibraries);
         }
 
-      public ActionResult GetLibrariesByCity(string stateAbbreviaiton, string cityName)
+      public ActionResult GetLibrariesByCity(string stateAbbreviation, string cityName)
       {
-        var libraries = libraryRepository.FindByCityState(stateAbbreviaiton, cityName);
+        var libraries = libraryRepository.FindByCityState(stateAbbreviation, cityName);
 
         return View(libraries);
       }
