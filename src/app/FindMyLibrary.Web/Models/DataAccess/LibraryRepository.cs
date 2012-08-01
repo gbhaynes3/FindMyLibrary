@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using FindMyLibrary.Web.Models.Domain;
@@ -8,7 +9,11 @@ namespace FindMyLibrary.Web.Models.DataAccess
 {
   public class LibraryRepository: ILibraryRepository
   {
-      public IQueryable<Library> All { get; private set; }
+
+      
+    LibraryContext context = new LibraryContext();
+
+    public IQueryable<Library> All { get { return context.Libraries; } }
       public Library Find(int id)
       {
           throw new NotImplementedException();
@@ -37,6 +42,13 @@ namespace FindMyLibrary.Web.Models.DataAccess
       public IQueryable<Library> FindLibrariesByText(string q)
       {
           throw new NotImplementedException();
+      }
+
+      public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
+      {
+        return
+          context.Libraries.Where(
+            l => l.Address.City.Equals(cityName) && l.Address.State.Abbreviation.Equals(stateAbbreviaiton));
       }
   }
 }

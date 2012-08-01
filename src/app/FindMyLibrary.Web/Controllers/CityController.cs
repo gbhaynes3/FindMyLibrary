@@ -32,7 +32,7 @@ namespace FindMyLibrary.Web.Controllers
 
         public ActionResult Index(string stateAbbreviation)
         {
-          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviation)).Select(a => new City{CityId = 1, Name = a.City});
+          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviation)).Select(a => new City{ Name = a.City});
 
           var jsonCities = from city in cities.AsEnumerable()
                            select JsonCityFromCity(city);
@@ -43,7 +43,7 @@ namespace FindMyLibrary.Web.Controllers
       
         public ActionResult GetCitiesByState(string stateAbbreviaiton)
         {
-          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviaiton)).Select(a => new City { CityId = 1, Name = a.City });
+          var cities = repository.All.Where(x => x.State.Abbreviation.Equals(stateAbbreviaiton)).Select(a => new City {Name = a.City, StateAbbreviation = stateAbbreviaiton});
 
           return View(cities);
         }
@@ -52,7 +52,6 @@ namespace FindMyLibrary.Web.Controllers
         {
             return new JsonCity
                 {
-                    CityId = city.CityId,
                     Name = city.Name,
                     Url = city.Name
                 };

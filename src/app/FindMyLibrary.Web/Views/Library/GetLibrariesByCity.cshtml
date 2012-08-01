@@ -1,0 +1,15 @@
+﻿@model System.Linq.IQueryable<FindMyLibrary.Web.Models.Domain.Library>
+
+@{
+  ViewBag.Title = "Libraries in ";
+  
+}
+
+<h2>Pick a Library</h2>
+<div id="libraryList" class="row-fluid">
+  @foreach(var library in Model.OrderBy(a => a.Name).Distinct())
+  {
+      
+      <div class="span3">@Html.ActionLink(library.Name, "Details", "Library")</div>
+  }
+</div>
