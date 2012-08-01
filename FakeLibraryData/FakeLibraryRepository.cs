@@ -36,7 +36,7 @@ namespace FindMyLibrary.Tests.Fakes
         throw new NotImplementedException();
       }
 
-      public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
+      public IQueryable<RouteLibrary> FindByCityState(string stateAbbreviaiton, string cityName)
       {
         throw new NotImplementedException();
       }

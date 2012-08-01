@@ -50,11 +50,13 @@ namespace FindMyLibrary.Web.Models.DataAccess
         context.Libraries.FirstOrDefault(l => l.Address.State.Abbreviation.Equals(stateAbbreviaiton) && l.Address.City.Equals(cityName) && l.Name.Equals(name));
     }
 
-    public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
+    public IQueryable<RouteLibrary> FindByCityState(string stateAbbreviaiton, string cityName)
       {
         return
-          context.Libraries.Where(
-            l => l.Address.City.Equals(cityName) && l.Address.State.Abbreviation.Equals(stateAbbreviaiton));
+          from l in context.Libraries
+          join a in context.Addresses on l.Address.AddressId equals a.AddressId
+          join s in context.States on a.State.Id equals s.Id
+          select new RouteLibrary { Name = l.Name, CityName = a.City, StateAbbreviation = s.Abbreviation };
       }
   }
 }

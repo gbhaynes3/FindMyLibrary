@@ -154,6 +154,7 @@
     <Compile Include="Models\Domain\Address.cs" />
     <Compile Include="Models\Domain\City.cs" />
     <Compile Include="Models\Domain\Library.cs" />
+    <Compile Include="Models\Domain\RouteLibrary.cs" />
     <Compile Include="Models\Domain\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
