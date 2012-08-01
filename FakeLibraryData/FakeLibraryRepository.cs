@@ -31,6 +31,11 @@ namespace FindMyLibrary.Tests.Fakes
                                                         || l.Address.City.Contains(q));
         }
 
+      public Library FindByName(string stateAbbreviaiton, string cityName, string name)
+      {
+        throw new NotImplementedException();
+      }
+
       public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
       {
         throw new NotImplementedException();

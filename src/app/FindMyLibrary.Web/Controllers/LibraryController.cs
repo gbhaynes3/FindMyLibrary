@@ -42,5 +42,12 @@ namespace FindMyLibrary.Web.Controllers
 
         return View(libraries);
       }
+
+      public ActionResult Details(string stateAbbreviation, string cityName, string name)
+      {
+        var library = libraryRepository.FindByName(stateAbbreviation, cityName, name);
+
+        return View(library);
+      }
     }
 }

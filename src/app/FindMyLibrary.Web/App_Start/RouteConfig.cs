@@ -27,6 +27,12 @@ namespace FindMyLibrary.Web
         url: "{stateAbbreviation}/{cityName}/libraries",
         defaults: new { controller = "Library", action = "GetLibrariesByCity", stateAbbreviation = "AL", cityName = "Birmingham"}
         );
+
+      routes.MapRoute(
+        name: "LibraryDetails",
+        url: "{stateAbbreviation}/{cityName}/{name}/details",
+        defaults: new { controller = "Library", action = "GetLibrariesByCity", stateAbbreviation = "AL", cityName = "Birmingham", name="Birmingham Public Library" }
+        );
     
       routes.MapRoute(
           name: "Default",

@@ -44,7 +44,13 @@ namespace FindMyLibrary.Web.Models.DataAccess
           throw new NotImplementedException();
       }
 
-      public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
+    public Library FindByName(string stateAbbreviaiton, string cityName, string name)
+    {
+      return
+        context.Libraries.FirstOrDefault(l => l.Address.State.Abbreviation.Equals(stateAbbreviaiton) && l.Address.City.Equals(cityName) && l.Name.Equals(name));
+    }
+
+    public IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName)
       {
         return
           context.Libraries.Where(

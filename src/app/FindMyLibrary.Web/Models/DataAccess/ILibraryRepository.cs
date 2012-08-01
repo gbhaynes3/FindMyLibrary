@@ -7,6 +7,7 @@ namespace FindMyLibrary.Web.Models.DataAccess
   {
     IQueryable<Library> FindByLocation(float latitude, float longitude);
     IQueryable<Library> FindLibrariesByText(string q);
+    Library   FindByName(string stateAbbreviaiton, string cityName, string name);
     IQueryable<Library> FindByCityState(string stateAbbreviaiton, string cityName);
   }
 }
