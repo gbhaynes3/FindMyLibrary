@@ -45,7 +45,8 @@ namespace FindMyLibrary.Web.Controllers
 
       public ActionResult Details(string stateAbbreviation, string cityName, string name)
       {
-        var library = libraryRepository.FindByName(stateAbbreviation, cityName, name);
+        var libraryName = name.Replace("_", " ");
+        var library = libraryRepository.FindByName(stateAbbreviation, cityName, libraryName);
 
         return View(library);
       }

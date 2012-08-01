@@ -10,6 +10,6 @@
   @foreach(var library in Model.OrderBy(a => a.Name).Distinct())
   {
       
-      <div class="span3">@Html.ActionLink(library.Name, "Details", "Library", new {stateAbbreviation = "AL", cityName = "Birmingham", name = library.Name}, null)</div>
+      <div class="span3">@Html.ActionLink(library.Name, "Details", "Library", new {stateAbbreviation = "AL", cityName = "Birmingham", name = library.Name.ToString().Replace(" ", "_").ToLower()}, null)</div>
   }
 </div>
